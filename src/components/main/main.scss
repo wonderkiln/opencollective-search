@@ -1,0 +1,143 @@
+.container {
+  background-image: url(./images/homepage-bg.svg);
+  background-position: center 45px;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.centerContainer {
+  padding-top: 250px;
+  margin: 0 auto;
+  width: 600px;
+  @media screen and (max-width: 640px) {
+    width: auto;
+    margin: 0 20px;
+  }
+}
+
+.logo {
+  width: 100%;
+  height: 75px;
+}
+
+.motto {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 16px;
+}
+
+.card {
+  box-shadow: 0 1px 3px 0 rgba(45,77,97,.2);
+  background-color: #fff;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content }
+  &:-moz-placeholder           { @content }
+  &::-moz-placeholder          { @content }
+  &:-ms-input-placeholder      { @content }  
+}
+
+.searchContainer {
+  position: relative;
+}
+
+.search {
+  @extend .card;
+  margin-top: 40px;
+  font-size: 16px;
+  padding: 0 20px;
+  display: block;
+  height: 60px;
+  width: 100%;
+  @include placeholder() {
+    color: rgba(0,0,0,.25);
+    font-style: italic;
+  }
+}
+
+.searchIndicator {
+  position: absolute;
+  z-index: 100;
+  right: 20px;
+  top: 22px;
+}
+
+.results {
+  margin-bottom: 30px;
+  position: relative;
+  margin-top: 10px;
+  z-index: 100;
+  @extend .card;
+}
+
+.resultItem {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  text-decoration: none;
+  padding: 20px 0;
+  display: block;
+  &:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+}
+
+@mixin resultFullContainer() {
+  @media screen and (max-width: 640px) {
+    text-align: center;
+    display: block;
+    width: auto;
+  }
+}
+
+.resultImageContainer {
+  vertical-align: text-top;
+  display: inline-block;
+  width: 20%;
+  @include resultFullContainer();
+}
+
+.resultContainer {
+  vertical-align: text-top;
+  display: inline-block;
+  width: 80%;
+  @include resultFullContainer();
+}
+
+.resultImage {
+  background-color: rgba(0,0,0,0.05);
+  display: inline-block;
+  border-radius: 35px;
+  object-fit: cover;
+  margin: 0 20px;
+  border: none;
+  height: 70px;
+  width: 70px;
+}
+
+.resultText {
+  display: block;
+  color: black;
+}
+
+.resultTitle {
+  @extend .resultText;
+  font-size: 18px;
+}
+
+.resultDescription {
+  @extend .resultText;
+  margin-top: 5px;
+}
+
+.footer {
+  color: rgba(0,0,0,0.4);
+  text-align: center;
+  position: absolute;
+  font-size: 14px;
+  bottom: 20px;
+  right: 0;
+  left: 0;
+}

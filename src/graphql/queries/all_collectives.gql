@@ -1,0 +1,10 @@
+query allCollectives {
+  allCollectives(limit: 50000, type: "COLLECTIVE", orderBy: "name") {
+    id,
+    name,
+    description,
+    image,
+    isActive,
+    slug,
+  }
+}
